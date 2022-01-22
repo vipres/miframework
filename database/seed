@@ -1,0 +1,22 @@
+<?php
+
+$connection = new PDO(
+    'mysql:host=localhost; dbname=miframework',
+    'root',
+    '',
+);
+
+$connection->query('DROP TABLE IF EXISTS users');
+
+$connection->query('
+    CREATE TABLE users (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255)
+    )
+');
+
+$connection->query('INSERT INTO users (name) VALUES ("Manolo Cabrera") ');
+$connection->query('INSERT INTO users (name) VALUES ("Cristina Cabrera") ');
+$connection->query('INSERT INTO users (name) VALUES ("Juan José Cabrera") ');
+
+
